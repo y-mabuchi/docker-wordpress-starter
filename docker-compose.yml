@@ -5,7 +5,6 @@ services:
     image: mysql:5.7
     volumes:
       - db_data:/varlib/mysql
-    restart: always
     environment:
       MYSQL_ROOT_PASSWORD: wordpress
       MYSQL_DATABASE: wordpress
@@ -18,7 +17,6 @@ services:
     image: wordpress:latest
     ports:
       - "8000:80"
-    restart: always
     volumes:
       - ./wp-content:/var/www/html/wp-content
     environment:
